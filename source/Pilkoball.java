@@ -34,7 +34,7 @@ public void setup() {
     }
   }
 
-  float[] values = {5.6f, 2, 0.9f, 0.5f, 0.2f, 0.2f, 0.5f, 0.9f, 2, 5.6f};
+  float[] values = {5.6f, 2, 1, 0.7f, 0.2f, 0.2f, 0.7f, 1, 2, 5.6f};
 
 
 
@@ -51,6 +51,7 @@ float score = 10000;
 
 public void mouseWheel(MouseEvent event) {
   int e = -event.getCount();
+  print(e);
   if (e == 1 && betting < score) {
     betting += 100;
   } else if (e == -1 && betting >0) {
@@ -58,12 +59,16 @@ public void mouseWheel(MouseEvent event) {
   }
 }
 
-public void mouseClicked() {
+public void mouseClicked(MouseEvent event) {
+  if(mouseButton == 3){
+    betting = score;
+    return;
+  }
+  
   if (betting == 0) {
     return;
   }
   if (score >=betting) {
-    print(betting/score);
     balls.add(new MoneyBall(random(width/2-50, width/2+50), 50, color(255*(1-betting/score), 255*(betting/score), 0), betting));
     score -= betting;
   }
@@ -206,9 +211,9 @@ class MoneyBall {
     float xvel = (this.x - p.x)/dist;
     
     if (this.velx > 0){
-    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.4f)*bounce;
+    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.3f)*bounce;
     } else {
-    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.4f)*bounce;
+    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.3f)*bounce;
     }
     this.vely = (this.vely * -abs(yvel))*bounce;
     this.preCollision();

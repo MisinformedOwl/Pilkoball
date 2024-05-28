@@ -17,7 +17,7 @@ void setup() {
     }
   }
 
-  float[] values = {5.6, 2, 0.9, 0.5, 0.2, 0.2, 0.5, 0.9, 2, 5.6};
+  float[] values = {5.6, 2, 1, 0.7, 0.2, 0.2, 0.7, 1, 2, 5.6};
 
 
 
@@ -34,6 +34,7 @@ float score = 10000;
 
 void mouseWheel(MouseEvent event) {
   int e = -event.getCount();
+  print(e);
   if (e == 1 && betting < score) {
     betting += 100;
   } else if (e == -1 && betting >0) {
@@ -41,12 +42,16 @@ void mouseWheel(MouseEvent event) {
   }
 }
 
-void mouseClicked() {
+void mouseClicked(MouseEvent event) {
+  if(mouseButton == 3){
+    betting = score;
+    return;
+  }
+  
   if (betting == 0) {
     return;
   }
   if (score >=betting) {
-    print(betting/score);
     balls.add(new MoneyBall(random(width/2-50, width/2+50), 50, color(255*(1-betting/score), 255*(betting/score), 0), betting));
     score -= betting;
   }
