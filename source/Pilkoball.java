@@ -120,7 +120,7 @@ class goal{
   public boolean collision(MoneyBall b){
     float ydiff = abs(this.y - b.y);
     
-    if (ydiff < b.size/2+this.hei/2){
+    if (ydiff < this.hei/2){
       if (b.x >this.x && b.x < this.x+this.len){
         this.hit = true;
         return true;
