@@ -12,3 +12,5 @@ And scroll down to decrease it.
 
 ## Other information
 If the ball falls out of the area, L no money for you. Get owned bozo.
+
+The color of the balls depends on how much you have betted. And to showcase how predatory this gambling game is, I have marked balls which are closer to being "all in" as green to really get the dopamine going :)
