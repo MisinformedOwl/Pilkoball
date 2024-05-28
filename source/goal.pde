@@ -10,6 +10,7 @@ class goal{
   int sinCount = 0;
   int sinLimit = 10;
   float shader = 0.7;
+  int hitCounter = 0;
   
   
   public goal(int x, int y, float value, color col){
@@ -25,6 +26,7 @@ class goal{
     
     if (ydiff < this.hei/2){
       if (b.x >this.x && b.x < this.x+this.len){
+        this.hitCounter++;
         this.hit = true;
         return true;
       }

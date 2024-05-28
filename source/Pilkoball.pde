@@ -20,7 +20,7 @@ void setup() {
     }
   }
 
-  float[] values = {5.6, 2, 1, 0.7, 0.2, 0.2, 0.7, 1, 2, 5.6};
+  float[] values = {5.6, 2, 1.3, 0.7, 0.2, 0.2, 0.7, 1.3, 2, 5.6};
 
 
 
@@ -58,6 +58,8 @@ void mouseClicked(MouseEvent event) {
     score -= betting;
   }
 }
+
+int spawnerCounter = 0;
 
 void draw() {
   fill(0, 140);

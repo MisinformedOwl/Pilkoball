@@ -37,7 +37,7 @@ public void setup() {
     }
   }
 
-  float[] values = {5.6f, 2, 1, 0.7f, 0.2f, 0.2f, 0.7f, 1, 2, 5.6f};
+  float[] values = {5.6f, 2, 1.3f, 0.7f, 0.2f, 0.2f, 0.7f, 1.3f, 2, 5.6f};
 
 
 
@@ -76,6 +76,8 @@ public void mouseClicked(MouseEvent event) {
   }
 }
 
+int spawnerCounter = 0;
+
 public void draw() {
   fill(0, 140);
   rect(0, 0, width, height);
@@ -109,6 +111,7 @@ class goal{
   int sinCount = 0;
   int sinLimit = 10;
   float shader = 0.7f;
+  int hitCounter = 0;
   
   
   public goal(int x, int y, float value, int col){
@@ -124,6 +127,7 @@ class goal{
     
     if (ydiff < this.hei/2){
       if (b.x >this.x && b.x < this.x+this.len){
+        this.hitCounter++;
         this.hit = true;
         return true;
       }
@@ -213,9 +217,9 @@ class MoneyBall {
     float xvel = (this.x - p.x)/dist;
     
     if (this.velx > 0){
-    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.3f)*bounce;
+    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.2f)*bounce;
     } else {
-    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.3f)*bounce;
+    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.2f)*bounce;
     }
     this.vely = (this.vely * -abs(yvel))*bounce;
     this.preCollision();

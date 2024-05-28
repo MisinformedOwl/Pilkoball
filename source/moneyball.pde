@@ -60,9 +60,9 @@ class MoneyBall {
     float xvel = (this.x - p.x)/dist;
     
     if (this.velx > 0){
-    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.3)*bounce;
+    this.velx = ((this.velx * xvel) + (this.vely * xvel)/2.2)*bounce;
     } else {
-    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.3)*bounce;
+    this.velx = ((-this.velx * xvel) + (this.vely * xvel)/2.2)*bounce;
     }
     this.vely = (this.vely * -abs(yvel))*bounce;
     this.preCollision();
