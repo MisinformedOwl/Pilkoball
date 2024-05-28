@@ -9,6 +9,7 @@ Click to drop a ball. Your bank value will go down as you click depending on how
 
 Scroll up to increase the betting ammount.
 And scroll down to decrease it.
+Or you can middle mouse to match betting ammount to your total bank value.
 
 ## Other information
 If the ball falls out of the area, L no money for you. Get owned bozo.
