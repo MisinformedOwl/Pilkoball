@@ -19,9 +19,12 @@ ArrayList<MoneyBall> balls = new ArrayList<MoneyBall>();
 ArrayList<peg> pegs = new ArrayList<peg>();
 ArrayList<goal> goals = new ArrayList<goal>();
 
+
 public void setup() {
   int spacerValue = 80;
   /* size commented out by preprocessor */;
+  PImage icon = loadImage("source/icon.png");
+  surface.setIcon(icon);
   background(0);
   noStroke();
   rotate(180);
@@ -51,7 +54,6 @@ float score = 10000;
 
 public void mouseWheel(MouseEvent event) {
   int e = -event.getCount();
-  print(e);
   if (e == 1 && betting < score) {
     betting += 100;
   } else if (e == -1 && betting >0) {
@@ -65,7 +67,7 @@ public void mouseClicked(MouseEvent event) {
     return;
   }
   
-  if (betting == 0) {
+  if (betting <= 0) {
     return;
   }
   if (score >=betting) {
